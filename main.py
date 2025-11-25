@@ -17,6 +17,14 @@ def runPowerShell(cmd):
 def writeToFile(path, data):
     try:
         with open(path, 'w', encoding='utf-8') as f:
+            '''
+                # If write all to one file
+                with open(path, 'a', encoding='utf-8') as f:
+                    f.write(f"--------------------------------------\n")
+                    f.write(data)
+                    f.write("\n\n\n\n")
+            '''
+            
             f.write(data)
         print(f"Written OK: {path}")
     except Exception as e:
@@ -62,6 +70,8 @@ if __name__ == "__main__":
         
         result = runPowerShell(command)
 
+        # If write all to one file
+        # filepath = os.path.join(userFolder, f"device_info.txt")
         filepath = os.path.join(userFolder, f"{component}_info.txt")
 
         writeToFile(filepath, result)
