@@ -23,3 +23,9 @@ pip install pyinstaller
 ```python
 pyinstaller --onefile main.py
 ```
+
+## Result
+
+![Folder](image-1.png)
+
+![File](image.png)
